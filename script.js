@@ -10,6 +10,9 @@ function okaay(event){
     let guchi = new FormData(hmm);
     // console.log(guchi.get('number'));
     answer = guchi.get('number')
+
+    let rem = document.getElementById('remove')
+    rem.remove();
 }
 
 const show = document.getElementById('show');
@@ -19,6 +22,15 @@ show.addEventListener('click',function(){
         let paragraph = document.createElement('p')
         paragraph.innerText = randomCard();
         document.body.appendChild(paragraph);
+    }
+    else{
+        let count = answer;
+        while (count) {
+            let paragraph = document.createElement('p')
+            paragraph.innerText = randomCard();
+            document.body.appendChild(paragraph);
+            count--;
+        }
     }
 })
 
